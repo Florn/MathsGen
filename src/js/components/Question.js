@@ -8,8 +8,7 @@ import PaperSelector from './PaperSelector';
 export default class Question extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {questionVersions: ['Solve the following integral: $$ \\int_{1}^{0} x^2  $$ Please show all your work.',
-    'Solve the following integral: $$ \\int_{2}^{3} x^6  $$ Please show all your work.'],
+    this.state = {questionVersions: DATA.questions["Integration 2015 Paper 1"],
     questionSelector: 1,
     versionSelector: 0,
     questionData: DATA,
@@ -19,12 +18,9 @@ export default class Question extends React.Component {
   
   handlePaperChange = (event) => {
       event.preventDefault();
-      this.setState({ questionSelector: event.target.value});
+      this.setState({ questionSelector: event.target.value,
+      questionVersions: DATA.questions[event.target.value]});
       console.log("Paper Selected: " + this.state.questionSelector);
-  }
-
-  questionSelector = () => {
-    return this.state.questionSelector;
   }
 
   componentDidUpdate() {
@@ -67,11 +63,14 @@ export default class Question extends React.Component {
       <div>
         <div className="maths mt-4">{this.state.questionVersions[this.state.versionSelector]}</div>
           <div className="btn-group mt-4">
-           <PreviousButton onClick={this.handlePreviousBtnClick} />
-           <NextButton onClick={this.handleNextBtnClick} />
+           <PreviousButton onClick= {this.handlePreviousBtnClick} />
+           <NextButton onClick= {this.handleNextBtnClick} />
          </div>
          <div>
-         <PaperSelector questionSelector={this.state.questionSelector} handlePaperChange={this.handlePaperChange} />
+         <PaperSelector questionSelector= {this.state.questionSelector} 
+         handlePaperChange= {this.handlePaperChange}
+         questionsArray = {this.state.selectorList}
+         />
          </div>
       </div>
     );
