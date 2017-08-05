@@ -3,6 +3,7 @@ import Question from "./Question";
 import Header from "./Header";
 import Footer from "./Footer";
 import NewQuestionButton from "./NewQuestionButton";
+import PaperSelector from "./PaperSelector";
 
 function getNewQuestion() {
   alert("New Question Time");
@@ -15,7 +16,8 @@ export default class Layout extends React.Component {
         <Header title="MathsGen"/>
         <div className="container">
           <Question />
-        </div>
+        <PaperSelector />
+          </div>
         <Footer />
       </div>
     );
