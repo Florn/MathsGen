@@ -32,6 +32,7 @@ export default class Question extends React.Component {
     this.setState({
       versionSelector: newState
     });
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub])
     console.log(this.state.versionSelector);
   }
   handlePreviousBtnClick = () => {
@@ -41,6 +42,7 @@ export default class Question extends React.Component {
     this.setState({
       versionSelector: newState
     });
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub])
     console.log(this.state.versionSelector);
   }
   
