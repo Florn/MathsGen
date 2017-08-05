@@ -10,7 +10,7 @@ export default class Question extends React.Component {
     super(props);
     this.state = {questionVersions: ['Solve the following integral: $$ \\int_{1}^{0} x^2  $$ Please show all your work.',
     'Solve the following integral: $$ \\int_{2}^{3} x^6  $$ Please show all your work.'],
-    questionSelector: 0,
+    questionSelector: 1,
     versionSelector: 0,
     questionData: DATA,
     selectorList: Object.keys(DATA.questions)
@@ -21,6 +21,10 @@ export default class Question extends React.Component {
       event.preventDefault();
       this.setState({ questionSelector: event.target.value});
       console.log("Paper Selected: " + this.state.questionSelector);
+  }
+
+  questionSelector = () => {
+    return this.state.questionSelector;
   }
 
   componentDidUpdate() {
@@ -67,7 +71,7 @@ export default class Question extends React.Component {
            <NextButton onClick={this.handleNextBtnClick} />
          </div>
          <div>
-         <PaperSelector  handlePaperChange={this.handlePaperChange} />
+         <PaperSelector questionSelector={this.state.questionSelector} handlePaperChange={this.handlePaperChange} />
          </div>
       </div>
     );
