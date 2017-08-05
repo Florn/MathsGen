@@ -2,6 +2,7 @@ import React from "react";
 import NewQuestionButton from './NewQuestionButton';
 import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
+import DATA from './questions'
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -9,9 +10,17 @@ export default class Question extends React.Component {
     this.state = {questionVersions: ['Solve the following integral: $$ \\int_{1}^{0} x^2  $$ Please show all your work.',
     'Solve the following integral: $$ \\int_{2}^{3} x^6  $$ Please show all your work.'],
     questionSelector: 0,
-    versionSelector: 0};
+    versionSelector: 0,
+    questionData: ""};
   }
-
+  
+  componentDidMount() {
+    this.setState({
+      questionData: DATA
+    });
+    // console.log(DATA.questions.Integration_2015_Paper_1)
+  }
+  
   componentDidUpdate() {
     MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
   }
