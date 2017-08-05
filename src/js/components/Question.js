@@ -15,7 +15,7 @@ export default class Question extends React.Component {
     // this.handlePreviousBtnClick = this.handlePreviousBtnClick.bind(this);
   }
 
-  handleNewQClick() {
+  handleNewQClick = () => {
     let newState = this.state.questionSelector;
     newState += 1;
     newState = newState % this.state.questionVersions.length;
@@ -25,7 +25,7 @@ export default class Question extends React.Component {
     console.log(this.state.questionSelector);
   }
 
-  handleNextBtnClick() {
+  handleNextBtnClick = () => {
     let newState = this.state.versionSelector;
     newState += 1;
     newState = newState % this.state.questionVersions.length;
@@ -34,7 +34,7 @@ export default class Question extends React.Component {
     });
     console.log(this.state.versionSelector);
   }
-  handlePreviousBtnClick() {
+  handlePreviousBtnClick = () => {
     let newState = this.state.versionSelector;
     newState -= 1;
     newState = -(newState % this.state.questionVersions.length);
