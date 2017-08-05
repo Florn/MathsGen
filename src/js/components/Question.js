@@ -1,4 +1,5 @@
 import React from "react";
+import NewQuestionButton from './NewQuestionButton'
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ export default class Question extends React.Component {
     return (
       <div>
       <div className="maths">{this.state.questionVersions[0]}</div>
+      <NewQuestionButton />
+
       </div>
     );
   }

@@ -15,7 +15,6 @@ export default class Layout extends React.Component {
         <Header title="MathsGen"/>
         <div className="container">
           <Question />
-          <NewQuestionButton />
         </div>
         <Footer />
       </div>
