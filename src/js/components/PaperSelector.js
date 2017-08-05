@@ -21,7 +21,7 @@ render() {
             <option value="2">2</option>
             <option value="3">3</option>
         </select>
-        <h3>Paper Selected: {this.props.questionSelector}</h3>
+        <h5 class="mt-2">Paper Selected: {this.props.questionSelector}</h5>
         </div>
         );
   }

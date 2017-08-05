@@ -20,7 +20,6 @@ export default class Question extends React.Component {
   handlePaperChange = (event) => {
       event.preventDefault();
       this.setState({ questionSelector: event.target.value});
-      console.log("Paper Selected: " + this.state.questionSelector);
   }
 
   questionSelector = () => {
@@ -71,7 +70,7 @@ export default class Question extends React.Component {
            <NextButton onClick={this.handleNextBtnClick} />
          </div>
          <div>
-         <PaperSelector questionSelector={this.state.questionSelector} handlePaperChange={this.handlePaperChange} />
+         <PaperSelector questionSelector={this.state.questionSelector}    handlePaperChange={this.handlePaperChange}  />
          </div>
       </div>
     );
