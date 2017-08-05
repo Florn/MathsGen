@@ -14,7 +14,11 @@ export default class Layout extends React.Component {
       numQuestions: 0
     };
   }
-
+  
+  componentDidUpdate() {
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  }
+  
   addNewQuestion = () => {
     console.log("Add new question button pressed.")
     this.setState({
@@ -26,7 +30,7 @@ export default class Layout extends React.Component {
   getQuestions = () => {
     const children = []
     for (var i = 0; i < this.state.numQuestions; i +=1) {
-      children.push(<Question />)
+      children.push(<Question key={i}/>)
       console.log(children)
     }
     return children
@@ -37,8 +41,9 @@ export default class Layout extends React.Component {
       <div>
         <Header title="MathsGen"/>
         <div className="container">
-          <AddNewQuestion onClick={this.addNewQuestion}/>
           {this.getQuestions()}
+          <AddNewQuestion onClick={this.addNewQuestion}/>
+
         </div>
         <Footer />
       </div>

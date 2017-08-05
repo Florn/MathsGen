@@ -62,17 +62,18 @@ export default class Question extends React.Component {
     return (
       <div>
         <div className="maths mt-4">{this.state.questionVersions[this.state.versionSelector]}</div>
-          <div className="btn-group mt-4">
-           <PreviousButton onClick= {this.handlePreviousBtnClick} />
-           <NextButton onClick= {this.handleNextBtnClick} />
-         </div>
-         <div>
+        <div className="btn-group mt-4">
+          <PreviousButton onClick= {this.handlePreviousBtnClick} />
+          <NextButton onClick= {this.handleNextBtnClick} />
 
-         <PaperSelector questionSelector= {this.state.questionSelector} 
-         handlePaperChange= {this.handlePaperChange}
-         questionsArray = {this.state.selectorList}
-         />
-         </div>
+        </div>
+                  <PaperSelector questionSelector= {this.state.questionSelector} 
+          handlePaperChange= {this.handlePaperChange}
+          questionsArray = {this.state.selectorList}
+          />
+        <div>
+
+        </div>
       </div>
     );
   }

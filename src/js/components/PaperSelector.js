@@ -17,11 +17,11 @@ createSelectItems(){
   render() {
     return (
       <div class="mt-4">
-      <h4>Select Paper:</h4>
-      <select class="form-control" onChange={this.props.handlePaperChange} value={this.props.questionSelector}>
-        {this.createSelectItems()}
-      </select>
-      <h5 class="mt-2">Paper Selected: {this.props.questionSelector}</h5>
+        {/*<h4>Select Paper:</h4>*/}
+        <select class="form-control" onChange={this.props.handlePaperChange} value={this.props.questionSelector}>
+          {this.createSelectItems()}
+        </select>
+        {/*<h5 class="mt-2">Paper Selected: {this.props.questionSelector}</h5>*/}
       </div>
     );
   }
