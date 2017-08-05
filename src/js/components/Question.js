@@ -10,14 +10,14 @@ export default class Question extends React.Component {
     'Solve the following integral: $$ \\int_{2}^{3} x^6  $$ Please show all your work.'],
     questionSelector: 0,
     versionSelector: 0};
+    this.handleNewQClick = this.handleNewQClick.bind(this);
+    this.handleNextBtnClick = this.handleNextBtnClick.bind(this);
+    this.handlePreviousBtnClick = this.handlePreviousBtnClick.bind(this);
   }
-  
-  handleNewQClick() {    
-    alert('Get new question button pressed.');
-  };
 
   handleNewQClick() {
     console.log('Get new question button pressed.');
+    console.log(this.state);
   }
   handleNextBtnClick() {
     console.log('Next button clicked.');
@@ -25,6 +25,7 @@ export default class Question extends React.Component {
   handlePreviousBtnClick() {
     console.log('Previous button clicked.');
   }
+  
 
   render() {
     return (
