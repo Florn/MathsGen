@@ -16,15 +16,17 @@ export default class Question extends React.Component {
   }
 
   handleNewQClick() {
-    console.log('Get new question button pressed.');
-    console.log(this.state);
+    this.state.questionSelector += 1;
+    console.log(this.state.questionSelector);
   }
 
   handleNextBtnClick() {
-    console.log('Next button clicked.');
+    this.state.versionSelector += 1;
+    console.log(this.state.versionSelector);
   }
   handlePreviousBtnClick() {
-    console.log('Previous button clicked.');
+    this.state.versionSelector -= 1;
+    console.log(this.state.versionSelector);
   }
   
 
