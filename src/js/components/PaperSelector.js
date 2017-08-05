@@ -21,7 +21,7 @@ createSelectItems(){
       <select class="form-control" onChange={this.props.handlePaperChange} value={this.props.questionSelector}>
         {this.createSelectItems()}
       </select>
-      <h3>Paper Selected: {this.props.questionSelector}</h3>
+      <h5 class="mt-2">Paper Selected: {this.props.questionSelector}</h5>
       </div>
     );
   }

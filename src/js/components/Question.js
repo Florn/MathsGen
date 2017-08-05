@@ -67,6 +67,7 @@ export default class Question extends React.Component {
            <NextButton onClick= {this.handleNextBtnClick} />
          </div>
          <div>
+
          <PaperSelector questionSelector= {this.state.questionSelector} 
          handlePaperChange= {this.handlePaperChange}
          questionsArray = {this.state.selectorList}
