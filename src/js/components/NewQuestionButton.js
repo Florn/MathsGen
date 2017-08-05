@@ -1,13 +1,8 @@
 import React from "react";
 
-export default class NewQuestionButton extends React.Component {
-constructor(props) {
-    super(props);
-    this.getNewQuestion = this.getNewQuestion.bind(this);
-  }
-  
+export default class NewQuestionButton extends React.Component {  
   getNewQuestion() {
-    alert('GEt New Question');
+    alert('Get new question button pressed.');
     console.log("Get new question button pressed.");
   }
   render() {
