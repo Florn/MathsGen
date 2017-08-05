@@ -13,12 +13,9 @@ export default class Question extends React.Component {
   }
   
   handleNewQClick() {    
-    alert('Get new question button pressed.');
-  };
-
-  handleNewQClick() {
-    console.log('Get new question button pressed.');
+    console.log(this.state.questionVersions[0]);
   }
+
   handleNextBtnClick() {
     console.log('Next button clicked.');
   }
