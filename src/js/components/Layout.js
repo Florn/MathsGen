@@ -22,14 +22,15 @@ export default class Layout extends React.Component {
     });
     console.log('Number of questions: ' + this.state.numQuestions);
   }
-
-  // const children = []
-  // getQuestions = () => {
-  //   for (var i = 0; i < this.state.numQuestions; i +=1) {
-  //     children.push(<Question />)
-  //   }
-  // }
   
+  getQuestions = () => {
+    const children = []
+    for (var i = 0; i < this.state.numQuestions; i +=1) {
+      children.push(<Question />)
+      console.log(children)
+    }
+    return children
+  }
 
   render() {
     return (
@@ -37,9 +38,8 @@ export default class Layout extends React.Component {
         <Header title="MathsGen"/>
         <div className="container">
           <AddNewQuestion onClick={this.addNewQuestion}/>
-          <Question/>
-          <Question/>
-          </div>
+          {this.getQuestions()}
+        </div>
         <Footer />
       </div>
     );
