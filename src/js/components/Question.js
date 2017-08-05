@@ -10,9 +10,10 @@ export default class Question extends React.Component {
     'Solve the following integral: $$ \\int_{2}^{3} x^6  $$ Please show all your work.'],
     questionSelector: 0,
     versionSelector: 0};
-    // this.handleNewQClick = this.handleNewQClick.bind(this);
-    // this.handleNextBtnClick = this.handleNextBtnClick.bind(this);
-    // this.handlePreviousBtnClick = this.handlePreviousBtnClick.bind(this);
+  }
+
+  componentDidUpdate() {
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
   }
 
   handleNewQClick = () => {
@@ -32,9 +33,9 @@ export default class Question extends React.Component {
     this.setState({
       versionSelector: newState
     });
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub])
     console.log(this.state.versionSelector);
   }
+  
   handlePreviousBtnClick = () => {
     let newState = this.state.versionSelector;
     newState -= 1;
@@ -42,7 +43,6 @@ export default class Question extends React.Component {
     this.setState({
       versionSelector: newState
     });
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub])
     console.log(this.state.versionSelector);
   }
   
