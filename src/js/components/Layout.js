@@ -7,9 +7,11 @@ import Header from "./Header";
 export default class Layout extends React.Component {
   render() {
     return (
-      <div class="container">
+      <div>
         <Header title="MathsGen"/>
-        <Question />
+        <div className="container">
+          <Question />
+        </div>
       </div>
     );
   }

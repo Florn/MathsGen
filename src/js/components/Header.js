@@ -4,9 +4,9 @@ import Title from "./Header/Title";
 export default class Header extends React.Component {
   render() {
     return (
-      <div>
+      <nav class="navbar navbar-light bg-faded">
         <Title title={this.props.title} />
-      </div>
+      </nav>
     );
   }
 }
