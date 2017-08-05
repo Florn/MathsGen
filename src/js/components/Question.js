@@ -1,12 +1,4 @@
 import React from "react";
-function curlyStart() {
-  return '{'
-}
-
-function curlyEnd() {
-  return '}'
-}
-
 
 export default class Question extends React.Component {
 
