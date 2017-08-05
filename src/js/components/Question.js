@@ -11,14 +11,9 @@ export default class Question extends React.Component {
     'Solve the following integral: $$ \\int_{2}^{3} x^6  $$ Please show all your work.'],
     questionSelector: 0,
     versionSelector: 0,
-    questionData: ""};
-  }
-  
-  componentDidMount() {
-    this.setState({
-      questionData: DATA
-    });
-    // console.log(DATA.questions.Integration_2015_Paper_1)
+    questionData: DATA,
+    selectorList: Object.keys(DATA.questions)
+    };
   }
   
   componentDidUpdate() {
