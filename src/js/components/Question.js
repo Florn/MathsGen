@@ -16,16 +16,31 @@ export default class Question extends React.Component {
   }
 
   handleNewQClick() {
-    this.state.questionSelector += 1;
+    let newState = this.state.questionSelector;
+    newState += 1;
+    newState = newState % this.state.questionVersions.length;
+    this.setState({
+      questionSelector: newState
+    });
     console.log(this.state.questionSelector);
   }
 
   handleNextBtnClick() {
-    this.state.versionSelector += 1;
+    let newState = this.state.versionSelector;
+    newState += 1;
+    newState = newState % this.state.questionVersions.length;
+    this.setState({
+      versionSelector: newState
+    });
     console.log(this.state.versionSelector);
   }
   handlePreviousBtnClick() {
-    this.state.versionSelector -= 1;
+    let newState = this.state.versionSelector;
+    newState -= 1;
+    newState = -(newState % this.state.questionVersions.length);
+    this.setState({
+      versionSelector: newState
+    });
     console.log(this.state.versionSelector);
   }
   
@@ -33,7 +48,7 @@ export default class Question extends React.Component {
   render() {
     return (
       <div>
-        <div className="maths mt-4">{this.state.questionVersions[0]}</div>
+        <div className="maths mt-4">{this.state.questionVersions[this.state.versionSelector]}</div>
           <div className="btn-group mt-4">
            <PreviousButton onClick={this.handlePreviousBtnClick} />
            <NextButton onClick={this.handleNextBtnClick} />
