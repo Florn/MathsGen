@@ -16,7 +16,6 @@ export default class Layout extends React.Component {
         <Header title="MathsGen"/>
         <div className="container">
           <Question />
-        <PaperSelector />
           </div>
         <Footer />
       </div>

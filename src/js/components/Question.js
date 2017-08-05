@@ -3,6 +3,7 @@ import NewQuestionButton from './NewQuestionButton';
 import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
 import DATA from './questions'
+import PaperSelector from './PaperSelector';
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -16,6 +17,12 @@ export default class Question extends React.Component {
     };
   }
   
+  handlePaperChange = (event) => {
+      event.preventDefault();
+      this.setState({ questionSelector: event.target.value});
+      console.log("Paper Selected: " + this.state.selected);
+  }
+
   componentDidUpdate() {
     MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
   }
@@ -60,7 +67,7 @@ export default class Question extends React.Component {
            <NextButton onClick={this.handleNextBtnClick} />
          </div>
          <div>
-         <NewQuestionButton onClick={this.handleNewQClick}/>
+         <PaperSelector handlePaperChange={this.handlePaperChange} />
          </div>
       </div>
     );
