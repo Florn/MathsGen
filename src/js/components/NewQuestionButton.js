@@ -6,7 +6,7 @@ export default class NewQuestionButton extends React.Component {
   }
   render() {
     return (
-      <button onClick={this.getNewQuestion} class="btn btn-primary">New Question</button>
+      <button onClick={this.getNewQuestion} class="btn btn-primary mt-4">New Question</button>
     );
   }
 }

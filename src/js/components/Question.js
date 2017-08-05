@@ -1,5 +1,7 @@
 import React from "react";
-import NewQuestionButton from './NewQuestionButton'
+import NewQuestionButton from './NewQuestionButton';
+import NextButton from './NextButton';
+import PreviousButton from './PreviousButton';
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -10,9 +12,14 @@ export default class Question extends React.Component {
   render() {
     return (
       <div>
-      <div className="maths">{this.state.questionVersions[0]}</div>
-      <NewQuestionButton />
-
+        <div className="maths mt-4">{this.state.questionVersions[0]}</div>
+          <div className="btn-group mt-4">
+           <PreviousButton />
+           <NextButton />
+         </div>
+         <div>
+          <NewQuestionButton />
+         </div>
       </div>
     );
   }
