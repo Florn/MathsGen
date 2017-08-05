@@ -11,9 +11,12 @@ export default class Question extends React.Component {
     return (
       <div>
       <div className="maths">{this.state.questionVersions[0]}</div>
-      <NewQuestionButton />
+      <NewQuestionButton onClick={this.handleNewQClick}/>
 
       </div>
     );
+  }
+  handleNewQClick() {
+    alert('Get new question button pressed.');
   }
 }
