@@ -4,7 +4,10 @@ import React from "react";
 export default class Question extends React.Component {
   render() {
     return (
-      <p>Is this wor? $$x$$</p>
+      <div>
+      <p>Is this working?</p>
+      <div className="maths">$$x$$</div>
+      </div>
     );
   }
 }
