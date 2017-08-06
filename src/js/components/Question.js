@@ -4,6 +4,14 @@ import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
 import DATA from './questions'
 import PaperSelector from './PaperSelector';
+import styled from 'styled-components';
+
+const Wrapper = styled.section`
+	padding: .5em;
+  border: 2.5px solid palevioletred;
+	background: papayawhip;
+  margin: 200 200em;
+`;
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -60,21 +68,18 @@ export default class Question extends React.Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <div className="maths mt-4">{this.state.questionVersions[this.state.versionSelector]}</div>
-        <div className="btn-group mt-4">
+        <div className="btn-group mt-4" >
           <PreviousButton onClick= {this.handlePreviousBtnClick} />
           <NextButton onClick= {this.handleNextBtnClick} />
-
         </div>
-                  <PaperSelector questionSelector= {this.state.questionSelector} 
+        <PaperSelector questionSelector= {this.state.questionSelector} 
           handlePaperChange= {this.handlePaperChange}
           questionsArray = {this.state.selectorList}
           />
-        <div>
 
-        </div>
-      </div>
+      </Wrapper>
     );
   }
 
