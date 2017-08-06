@@ -6,6 +6,7 @@ import NewQuestionButton from "./NewQuestionButton";
 import PaperSelector from "./PaperSelector";
 import AddNewQuestion from "./AddNewQuestion";
 import styled from 'styled-components';
+import colourStyle from './Styles'
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -22,19 +23,19 @@ export default class Layout extends React.Component {
   }
   
   addNewQuestion = () => {
-    console.log("Add new question button pressed.")
+    if (this.state.numQuestions < this.state.maxQuestions) {
     this.setState({
       numQuestions: this.state.numQuestions += 1
-    });
-    console.log('Number of questions: ' + this.state.numQuestions);
+    })} else{
+    alert("There is a maximum of " + this.state.maxQuestions + " questions per page.")
+    };
   }
   
-  
   getQuestions = () => {
-    if (this.state.numQuestions < this.state.maxQuestions) {
-      for (var i = 0; i < this.state.numQuestions; i +=1) {
+    if (this.state.numQuestions <= this.state.maxQuestions) {
+      for (var i = this.state.numQuestions; i <= this.state.numQuestions; i +=1) {
         this.state.children.push(<Question key={i} />)
-        console.log(this.state.children)
+        this.state.children.push(<br key={i+10}></br>)
       }
     return this.state.children} else {
       alert("There is a maximum of " + this.state.maxQuestions + " questions per page.")

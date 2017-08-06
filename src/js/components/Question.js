@@ -5,13 +5,17 @@ import PreviousButton from './PreviousButton';
 import DATA from './questions'
 import PaperSelector from './PaperSelector';
 import styled from 'styled-components';
+import colourStyle from './Styles'
 
 const Wrapper = styled.section`
-	padding: .5em;
-  border: 2.5px solid palevioletred;
-	background: papayawhip;
-  margin: 200 200em;
+	padding: .5em .5em .5em .5em;
+  border: .5px solid ${colourStyle[1]} ;
+	background: 	${colourStyle[0]} ;
+  align-content: center;
+  width: 300px;
 `;
+
+
 
 export default class Question extends React.Component {
   constructor(props) {
@@ -33,16 +37,6 @@ export default class Question extends React.Component {
 
   componentDidUpdate() {
     MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-  }
-
-  handleNewQClick = () => {
-    let newState = this.state.questionSelector;
-    newState += 1;
-    newState = newState % this.state.questionVersions.length;
-    this.setState({
-      questionSelector: newState
-    });
-    console.log(this.state.questionSelector);
   }
 
   handleNextBtnClick = () => {

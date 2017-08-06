@@ -1,14 +1,14 @@
 import React from "react";
 import styled from 'styled-components';
-
+import colourStyle from './Styles'
 
 const Button = styled.button`
   border-radius: 3px;
   padding: 0.25em 1em;
-  margin: 0 1em;
   background: transparent;
-  color: palevioletred;
-  border: 2px solid palevioletred
+  color: ${colourStyle[1]} ;
+  border: .5px solid ${colourStyle[1]} ;
+
   `
 
 export default class NextButton extends React.Component {  

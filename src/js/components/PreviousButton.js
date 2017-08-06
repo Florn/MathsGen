@@ -1,5 +1,5 @@
 import React from "react";
-
+import colourStyle from './Styles'
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -7,8 +7,10 @@ const Button = styled.button`
   padding: 0.25em 1em;
   margin: 0 1em;
   background: transparent;
-  color: palevioletred;
-  border: 2px solid palevioletred
+  color: ${colourStyle[1]} ;
+  border: .5px solid ${colourStyle[1]};
+  ;
+    
   `
 
 export default class PreviousButton extends React.Component {  
