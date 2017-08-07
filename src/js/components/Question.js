@@ -8,12 +8,12 @@ import styled from 'styled-components';
 import colourStyle from './Styles'
 
 const Wrapper = styled.section`
-	padding: .5em .5em .5em .5em;
-  border: .5px solid ${colourStyle[1]} ;
-	background: 	${colourStyle[0]} ;
-  align-content: center;
-  width: 300px;
-  border-radius: 3px;
+	// padding: .5em .5em .5em .5em;
+  // border: .5px solid ${colourStyle[1]} ;
+	// background: 	${colourStyle[0]} ;
+  // align-content: center;
+  // width: 300px;
+  // border-radius: 5px;
 `;
 
 
@@ -63,18 +63,21 @@ export default class Question extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <div className="maths mt-4">{this.state.questionVersions[this.state.versionSelector]}</div>
-        <div className="btn-group mt-4" >
-          <PreviousButton onClick= {this.handlePreviousBtnClick} />
-          <NextButton onClick= {this.handleNextBtnClick} />
-        </div>
-        <PaperSelector questionSelector= {this.state.questionSelector} 
-          handlePaperChange= {this.handlePaperChange}
-          questionsArray = {this.state.selectorList}
-          />
-
-      </Wrapper>
+        <div className="maths card mt-4">
+          <div className="card-block">
+            {this.state.questionVersions[this.state.versionSelector]}
+          </div>
+          <div className="card-block">
+                <div className="btn-group mt-4">
+                <PreviousButton onClick= {this.handlePreviousBtnClick} />
+                <NextButton onClick= {this.handleNextBtnClick} />
+              </div>
+            <PaperSelector questionSelector= {this.state.questionSelector} 
+              handlePaperChange= {this.handlePaperChange}
+              questionsArray = {this.state.selectorList}
+              />
+            </div>
+          </div>
     );
   }
 

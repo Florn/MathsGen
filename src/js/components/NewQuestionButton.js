@@ -14,7 +14,7 @@ const Button = styled.button`
 export default class NewQuestionButton extends React.Component {  
   render() {
     return (
-      <Button onClick={this.props.onClick} class="btn btn-primary mt-4">New Question</Button>
+      <button onClick={this.props.onClick} class="btn btn-lg btn-primary mt-4">New Question</button>
     );
   }
 }
