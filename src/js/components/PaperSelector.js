@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import colourStyle from './Styles'
 
 const Select = styled.select`
-  border-radius: 3px;
-  background: transparent;
-  color: ${colourStyle[1]} ;
-  border: .5px solid ${colourStyle[1]};
-  align-content: center;
-  ;
+  // border-radius: 3px;
+  // background: transparent;
+  // color: ${colourStyle[1]} ;
+  // border: .5px solid ${colourStyle[1]};
+  // align-content: center;
   `
   
 function thisworks() {

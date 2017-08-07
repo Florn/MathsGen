@@ -41,10 +41,9 @@ export default class Layout extends React.Component {
       alert("There is a maximum of " + this.state.maxQuestions + " questions per page.")
       return this.state.children
     }
-    
-
   }
 
+  
   render() {
     return (
       <div>
@@ -52,7 +51,6 @@ export default class Layout extends React.Component {
         <div className="container">
           {this.getQuestions()}
           <AddNewQuestion onClick={this.addNewQuestion}/>
-
         </div>
         <Footer />
       </div>

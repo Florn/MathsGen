@@ -63,11 +63,12 @@ export default class Question extends React.Component {
 
   render() {
     return (
-        <div className="maths card mt-4">
-          <div className="card-block">
+        <div className="question card mt-4">
+        <div className="card-header">Question</div>  
+        <div className="card-block">
             {this.state.questionVersions[this.state.versionSelector]}
           </div>
-          <div className="card-block">
+          <div className="card-footer">
                 <div className="btn-group mt-4">
                 <PreviousButton onClick= {this.handlePreviousBtnClick} />
                 <NextButton onClick= {this.handleNextBtnClick} />
