@@ -37,7 +37,8 @@ export default class Question extends React.Component {
   }
 
   componentDidUpdate() {
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    var maths_question = document.getElementsByClassName('maths-question');
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub, maths_question]);
   }
 
   handleNextBtnClick = () => {
@@ -47,7 +48,7 @@ export default class Question extends React.Component {
     this.setState({
       versionSelector: newState
     });
-    console.log(this.state.versionSelector);
+    console.log("Version Selector: " + this.state.versionSelector);
   }
   
   handlePreviousBtnClick = () => {
@@ -57,7 +58,7 @@ export default class Question extends React.Component {
     this.setState({
       versionSelector: newState
     });
-    console.log(this.state.versionSelector);
+    console.log("Version Selector: " + this.state.versionSelector);
   }
   
 
@@ -65,7 +66,7 @@ export default class Question extends React.Component {
     return (
         <div className="question card mt-4">
         <div className="card-header">Question</div>  
-        <div className="card-block">
+        <div className="card-block maths-question">
             {this.state.questionVersions[this.state.versionSelector]}
           </div>
           <div className="card-footer">
