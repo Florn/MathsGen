@@ -1,3 +1,52 @@
 .maths-question {
     min-height: 150px;
 }
+
+.navbar-brand {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    animation-name: animated;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+@keyframes animated {
+    0% { 
+        color: #0275d8;
+    }
+    80% { 
+        color: #0275d8; 
+    }
+    100% { 
+        color: #4C98DA;
+    }
+}
+
+.bar {
+    margin-top: 16px;
+    margin-right: 10px;
+    float: left;
+    background-color: #0275d8;
+    animation-name: bar-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes bar-animation {
+    0% {
+        width: 10px;
+        height: 0px;
+        color: #0275d8;
+    }
+    100% {
+        width: 10px;
+        height: 22px;
+        color: #4C98DA;
+    }
+}
