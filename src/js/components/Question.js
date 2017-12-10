@@ -1,7 +1,5 @@
 import React from "react";
-import NewQuestionButton from './NewQuestionButton';
-import NextButton from './NextButton';
-import PreviousButton from './PreviousButton';
+import Button from './Button';
 import DATA from './questions'
 import PaperSelector from './PaperSelector';
 import styled from 'styled-components';
@@ -71,12 +69,12 @@ export default class Question extends React.Component {
           </div>
           <div className="card-footer">
                 <div className="btn-group mt-4">
-                <PreviousButton onClick= {this.handlePreviousBtnClick} />
-                <NextButton onClick= {this.handleNextBtnClick} />
+                <Button onClick={this.handlePreviousBtnClick} text={"Previous"}/>
+                <Button onClick={this.handleNextBtnClick} text={"Next"}/>
               </div>
             <PaperSelector questionSelector= {this.state.questionSelector} 
-              handlePaperChange= {this.handlePaperChange}
-              questionsArray = {this.state.selectorList}
+              handlePaperChange={this.handlePaperChange}
+              questionsArray={this.state.selectorList}
               />
             </div>
           </div>

@@ -2,7 +2,6 @@ import React from "react";
 import Question from "./Question";
 import Header from "./Header";
 import Footer from "./Footer";
-import NewQuestionButton from "./NewQuestionButton";
 import PaperSelector from "./PaperSelector";
 import AddNewQuestion from "./AddNewQuestion";
 import styled from 'styled-components';
