@@ -39,26 +39,16 @@ export default class Question extends React.Component {
     MathJax.Hub.Queue(["Typeset",MathJax.Hub, maths_question]);
   }
 
-  handleNextBtnClick = () => {
+  incrementQuestion = direction => {
     let newState = this.state.versionSelector;
-    newState += 1;
+    newState += direction;
     newState = newState % this.state.questionVersions.length;
+    newState = newState * direction
     this.setState({
       versionSelector: newState
     });
     console.log("Version Selector: " + this.state.versionSelector);
   }
-  
-  handlePreviousBtnClick = () => {
-    let newState = this.state.versionSelector;
-    newState -= 1;
-    newState = -(newState % this.state.questionVersions.length);
-    this.setState({
-      versionSelector: newState
-    });
-    console.log("Version Selector: " + this.state.versionSelector);
-  }
-  
 
   render() {
     return (
@@ -69,18 +59,18 @@ export default class Question extends React.Component {
           </div>
           <div className="card-footer">
                 <div className="btn-group mt-4">
-                <Button 
-                  onClick={this.handlePreviousBtnClick} 
-                  text={"Previous"}
-                  class="btn btn-outline-primary"
-                  style={styles.previousButton}
-                />
-                <Button 
-                  onClick={this.handleNextBtnClick} 
-                  text={"Next"}
-                  class="btn btn-outline-primary"
-                  style={styles.nextButton}
-                />
+                  <Button 
+                    onClick={() => this.incrementQuestion(-1)} 
+                    text={"Previous"}
+                    class="btn btn-outline-primary"
+                    style={styles.previousButton}
+                  />
+                  <Button 
+                    onClick={() => this.incrementQuestion(1)} 
+                    text={"Next"}
+                    class="btn btn-outline-primary"
+                    style={styles.nextButton}
+                  />
               </div>
             <PaperSelector questionSelector= {this.state.questionSelector} 
               handlePaperChange={this.handlePaperChange}
