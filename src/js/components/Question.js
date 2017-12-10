@@ -3,7 +3,7 @@ import Button from './Button';
 import DATA from './questions'
 import PaperSelector from './PaperSelector';
 import styled from 'styled-components';
-import colourStyle from './Styles'
+import { colourStyle, styles } from './Styles'
 
 const Wrapper = styled.section`
 	// padding: .5em .5em .5em .5em;
@@ -69,8 +69,18 @@ export default class Question extends React.Component {
           </div>
           <div className="card-footer">
                 <div className="btn-group mt-4">
-                <Button onClick={this.handlePreviousBtnClick} text={"Previous"}/>
-                <Button onClick={this.handleNextBtnClick} text={"Next"}/>
+                <Button 
+                  onClick={this.handlePreviousBtnClick} 
+                  text={"Previous"}
+                  class="btn btn-outline-primary"
+                  style={styles.previousButton}
+                />
+                <Button 
+                  onClick={this.handleNextBtnClick} 
+                  text={"Next"}
+                  class="btn btn-outline-primary"
+                  style={styles.nextButton}
+                />
               </div>
             <PaperSelector questionSelector= {this.state.questionSelector} 
               handlePaperChange={this.handlePaperChange}

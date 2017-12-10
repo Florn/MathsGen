@@ -4,8 +4,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import PaperSelector from "./PaperSelector";
 import AddNewQuestion from "./AddNewQuestion";
+import Button from "./Button";
 import styled from 'styled-components';
-import colourStyle from './Styles'
+import { colourStyle, styles } from './Styles';
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class Layout extends React.Component {
   }
   
   componentDidUpdate() {
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, root]);
   }
   
   addNewQuestion = () => {
@@ -41,7 +42,6 @@ export default class Layout extends React.Component {
       return this.state.children
     }
   }
-
   
   render() {
     return (
@@ -49,7 +49,12 @@ export default class Layout extends React.Component {
         <Header title="MathsGen"/>
         <div className="container">
           {this.getQuestions()}
-          <AddNewQuestion onClick={this.addNewQuestion}/>
+          <Button
+            class="mt-2 btn btn-outline-primary btn-lg" 
+            onClick={this.addNewQuestion} 
+            text={"Add New Question"}
+            style={styles.newQuestionButton}
+          />
         </div>
         <Footer />
       </div>

@@ -5,15 +5,11 @@ import colourStyle from './Styles'
 const Select = styled.select`
   // border-radius: 3px;
   // background: transparent;
-  // color: ${colourStyle[1]} ;
-  // border: .5px solid ${colourStyle[1]};
+  // color: #6A5ACD ;
+  // border: .5px solid #6A5ACD;
   // align-content: center;
   `
   
-function thisworks() {
-  console.log(colourStyle[0])
-};
-thisworks();
   
 export default class PaperSelector extends React.Component {  
 
@@ -22,9 +18,7 @@ createSelectItems(){
   for(let i = 0; i <= this.props.questionsArray.length; i++) {             
     items.push(<option key={i} value={this.props.questionsArray[i]}>{this.props.questionsArray[i]}</option>)
     };
-
   return items
-
 }
 
   render() {

@@ -3,14 +3,7 @@ import React from "react";
 import colourStyle from './Styles'
 import styled from 'styled-components';
 
-const Button = styled.button`
-  // border-radius: 3px;
-  // padding: 0.25em 1em;
-  // margin: 0 0em;
-  // background: transparent;
-  // color: ${colourStyle[1]} ;
-  // border: .5px solid ${colourStyle[1]};
-  `
+const Button = styled.button
 
 export default class AddNewQuestion extends React.Component {  
   constructor(props) {

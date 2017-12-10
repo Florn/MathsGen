@@ -7,16 +7,22 @@ const StyledButton = styled.button
   border-radius: 3px;
   padding: 0.25em 1em;
   background: transparent;
-  color: ${colourStyle[1]} ;
-  border: .5px solid ${colourStyle[1]} ;
+  color: #6A5ACD ;
+  border: .5px solid #6A5ACD ;
   `
+
+
 
 export default class Button extends React.Component {  
   render() {
     return (
-      <StyledButton onClick={this.props.onClick} class="btn btn-outline-primary">
+      <button 
+        onClick={this.props.onClick} 
+        class={this.props.class}
+        style={this.props.style}
+      >
         {this.props.text}
-      </StyledButton>
+      </button>
     );
   }
 }
