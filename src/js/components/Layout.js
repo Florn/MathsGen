@@ -19,7 +19,7 @@ export default class Layout extends React.Component {
   }
   
   componentDidUpdate() {
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, root]);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
   }
   
   addNewQuestion = () => {

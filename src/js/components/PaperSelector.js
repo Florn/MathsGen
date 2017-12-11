@@ -25,7 +25,11 @@ createSelectItems(){
     return (
       <div class="mt-4">
         {/*<h4>Select Paper:</h4>*/}
-        <Select class="form-control" onChange={this.props.handlePaperChange} value={this.props.questionSelector}>
+        <Select class="form-control" 
+          onChange={this.props.handlePaperChange} 
+          value={this.props.questionSelector}
+          style={this.props.style}
+        >
           {this.createSelectItems()}
         </Select>
         <h></h>
